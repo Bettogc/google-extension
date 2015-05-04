@@ -1,0 +1,37 @@
+  {
+  "manifest_version": 2, /* This is the version of manifest */
+
+  "name": "Search projects Udacity", /* Name of our extension */
+  "version": "1.0", /* This is the version of extension */
+
+  "browser_action": { 
+    /* Icon for extension */
+    "default_icon": "Images/Cognits/cognits_icon_18x13.png",
+    /* This is to call the formulary in extension */
+    "default_popup": "Index.html"
+  },
+
+  "background" : {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "tabs", /* Permision for all tabs */
+    "https://review.udacity.com/#!/submissions/*" /* Permision for this urls */,
+    "alarms" /* To generate alerts for the user */
+  ],
+
+  /* Array of icons to extension */
+  "icons": { "16": "Images/Cognits/cognits_icon_18x13.png",
+           "48": "Images/Cognits/cognits_icon_32x24.png",
+          "128": "Images/Cognits/cognits_icon_64x47.png"},
+
+  /* Array of icons to extension */
+  "content_scripts": [
+    {
+      "matches": ["https://review.udacity.com/#!/submissions/*"],
+      "js": ["js/script.js", "js/background.js"]
+    }
+  ]
+}

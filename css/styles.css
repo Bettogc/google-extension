@@ -1,0 +1,14 @@
+body { 
+    min-width: 420px; 
+    overflow-x: hidden; 
+    font-family: 'Abel', sans-serif;
+    font-size: 14px; 
+}
+
+.container-margin {
+    margin: 10px 10px 10px 10px;
+}
+
+.button-format {
+    text-align: center;
+}

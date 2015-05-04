@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+
+    <!-- Call Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Call Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
+    <!-- Call Css File -->
+    <link href="css/styles.css" rel="stylesheet" media="screen">
+
+    <title>Getting Started Extension's Popup</title>
+  </head>
+  <body>
+    <div class="container container-margin">
+      <div class="row">
+        <form class="form-horizontal">
+          <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputSuccess3">Enter your Slack User</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="user-account" aria-describedby="inputSuccess3Status">
+              <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputSuccess3">Enter refresh time</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="time-refresh" aria-describedby="inputSuccess3Status">
+              <span class="glyphicon glyphicon-time form-control-feedback" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="form-group form-group-sm">
+            <div class="col-sm-12 button-format">
+              <button id="start" type="button" class="btn btn-success btn-lg">Large button</button>
+              <button id="stop" type="button" class="btn btn-danger btn-lg">Large button</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/background.js"></script>
+  </body>
+</html>
+
