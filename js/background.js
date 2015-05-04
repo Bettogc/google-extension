@@ -1,3 +1,15 @@
+var Slack = require('node-slackr');
+var slack = new Slack('https://hooks.slack.com/services/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');
+
+messages = {
+    text: "Prueba Udacity",
+    channel: "#general",
+    username: "serch--project-bot",
+    icon_url: "https://cdn4.iconfinder.com/data/icons/simplicio/128x128/folder_search.png"
+}
+
+
+
 function clickHandler(e) {
     chrome.extension.sendMessage({directive: "popup-click"}, function(response) {
         this.close(); // close the popup when the background finishes processing request
@@ -22,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     CheckStartButton.addEventListener('click', function() {
         if (TimeRefresh.value < 1) {
-            alert("Porfavor ingrese segundos mayores a 0")
+            slack.notify(messages);
+            alert("Porfavor ingrese segundos mayores a 0");
         } else {
             setInterval(function(){Reload()}, TimeRefresh.value*1000);
         };
