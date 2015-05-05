@@ -4,13 +4,6 @@ function clickHandler(e) {
     });
 };
 
-function SlackNotification(){
-    chrome.tabs.getSelected(null, function(tab) {
-        chrome.tabs.executeScript(tab.id, {file: "js/slack.js"});
-    });
-};
-
-
 function Reload(){
     chrome.tabs.getSelected(null, function(tab) {
         chrome.tabs.executeScript(tab.id, {file: "js/script.js"});
@@ -28,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     CheckStartButton.addEventListener('click', function() {
         if (TimeRefresh.value < 1) {
-            SlackNotification()
+            alert("Ingreso Erroneo");
         } else {
             setInterval(function(){Reload()}, TimeRefresh.value*1000);
         };
