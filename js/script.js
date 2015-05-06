@@ -1,7 +1,16 @@
-/*function AlertSlack() {
+function AlertSlack() {
+    var urlSlack = "https://slack.com/api/chat.postMessage?token=xoxp-2715349875-2952772808-4748588007-7dbb57&channel=C02M1A9SF&text=Prueba&username=Udacity%20Bot&icon_url=https%3A%2F%2Fslack.com%2Fimg%2Ficons%2Fapp-57.png&icon_emoji=%3Atada%3A&pretty=1"
+    $.ajax({
+        url : urlSlack + "&callback=?",
+        type : "POST",
+        success : function(parsed_json) {
+            console.log(parsed_json);
+        }
+    });
+    /*
     var ventana = window.open("https://slack.com/api/chat.postMessage?token=xoxp-2715349875-2952772808-4748588007-7dbb57&channel=C02M1A9SF&text=Prueba&username=Udacity%20Bot&icon_url=https%3A%2F%2Fslack.com%2Fimg%2Ficons%2Fapp-57.png&icon_emoji=%3Atada%3A&pretty=1","nom_page", "features")
-    ventana.close();
-}*/
+    ventana.close();*/
+};
 
 
 function SearchProject(NumberTable){
@@ -11,25 +20,16 @@ function SearchProject(NumberTable){
     if (button.length >0) { /*Verificar si el arreglo tiene botones*/
         for (var i = 0; i < button.length; i++) {
             button[i].click(); /* Da click a los botones de los proyectos*/
-
-            /*Guardo en la varible para boton para liberar proyectos*/
-            var VerifyCatchProject = document.getElementsByClassName('unassign');
-
-            /* Verifica si existe el boton anterior */
-            if (VerifyCatchProject.length == 1) {
-                /* Si exite regresa al dashboard para buscar proyectos */
-                setTimeout(function(){
-                    window.history.back()},
-                1000);
-            } else {
-                /* Da click en la alertade peridida del proyecto */
-                setTimeout(function(){
-                    var popup = document.getElementsByClassName("hanging-close")
-                    popup[0].click();
-                }, 1000);
+            if( $('.modal-dialog').is(":visible") ){
+                /* Da click en la alerta de peridida del proyecto */
+                var popup = document.getElementsByClassName("hanging-close")
+            }else{
+                /* regresa al Dachboard para seguir buscando proyectos */
+                setTimeout(function(){window.history.back()},1000); 
             };
         };
     } else { /* Si no hay botones de proyectos recarga */
+        AlertSlack();
         window.location.reload();
     };
 };
