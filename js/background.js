@@ -11,7 +11,7 @@ function Reload(){
     });
 };
 
-/* Este evento permite tomar los elementos del DOM en Index.htmlm */
+/* Este evento permite tomar los elementos del DOM en Index.html*/
 document.addEventListener('DOMContentLoaded', function() {
 
     /* Guardamos el boton start */

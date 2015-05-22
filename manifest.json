@@ -27,7 +27,7 @@
            "48": "Images/Cognits/cognits_icon_32x24.png",
           "128": "Images/Cognits/cognits_icon_64x47.png"},
 
-  /* Array of icons to extension */
+  /* Array of scrips to extension */
   "content_scripts": [
     {
       "matches": ["https://review.udacity.com/#!/submissions/*"],
