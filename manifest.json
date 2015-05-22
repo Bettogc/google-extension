@@ -2,13 +2,13 @@
   "manifest_version": 2, /* This is the version of manifest */
 
   "name": "Search projects Udacity", /* Name of our extension */
-  "version": "1.0", /* This is the version of extension */
+  "version": "2.0", /* This is the version of extension */
 
   "browser_action": { 
     /* Icon for extension */
-    "default_icon": "Images/Cognits/cognits_icon_18x13.png",
+    "default_icon": "Images/Cognits/cognits_icon_18x13.png"
     /* This is to call the formulary in extension */
-    "default_popup": "Index.html"
+    /*"default_popup": "Index.html"*/
   },
 
   "background" : {
@@ -18,8 +18,9 @@
 
   "permissions": [
     "tabs", /* Permision for all tabs */
-    "https://review.udacity.com/#!/submissions/*" /* Permision for this urls */,
-    "alarms" /* To generate alerts for the user */
+    "https://review.udacity.com/#!/submissions/*", /* Permision for this urls */
+    "alarms", /* To generate alerts for the user */
+    "background"
   ],
 
   /* Array of icons to extension */
@@ -33,5 +34,25 @@
       "matches": ["https://review.udacity.com/#!/submissions/*"],
       "js": ["js/script.js", "js/background.js"]
     }
-  ]
+  ],
+
+  /* permite crear los comandos que el plugin usara desde el teclado */
+  "commands": {
+    "Play": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A",
+        "linux": "Ctrl+Shift+A"
+      },
+      "description": "Start Pluggin"
+    },
+    "Stop": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S",
+        "linux": "Ctrl+Shift+S"
+      },
+      "description": "Stop Pluggin"
+    }
+  }
 }
